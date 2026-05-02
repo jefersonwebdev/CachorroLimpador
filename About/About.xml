@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <!-- O nome que aparece na lista de mods dentro do jogo -->
+  <name>Bio-Engenharia: Animais Utilitários</name>
+  
+  <!-- Seu nome ou o nome da sua marca -->
+  <author>Soluções Web Pro</author>
+  
+  <!-- Identificador único (importante para evitar conflitos com outros mods) -->
+  <!-- Use letras minúsculas e pontos. Ex: autor.nomedomod -->
+  <packageId>solucoesweb.animais.modificados</packageId>
+  
+  <!-- Versões do RimWorld que o seu mod suporta -->
+  <supportedVersions>
+    <li>1.4</li>
+    <li>1.5</li>
+    <li>1.6</li>
+  </supportedVersions>
+
+  <!-- Descrição detalhada que aparece no menu do jogo -->
+  <description>
+Este mod introduz uma série de animais modificados geneticamente para auxiliar na colônia:
+    
+- Labrador Faxineiro: Não gera sujeira e limpa o ambiente.
+- (Próximos animais aqui...)
+    
+Focado em utilidade e automação orgânica.
+  </description>
+
+  <!-- Links úteis (Opcional, mas profissional) -->
+  <url>https://github.com/seu-usuario/seu-repositorio</url>
+
+  <!-- Mods necessários para este aqui funcionar (Opcional) -->
+  <modDependencies>
+    <!-- Se você for usar mecânicas muito avançadas que exigem outros mods base -->
+  </modDependencies>
+
+  <!-- Se o seu mod deve ser carregado DEPOIS de outros específicos -->
+  <loadAfter>
+    <li>Ludeon.RimWorld</li>
+  </loadAfter>
+</ModMetaData>

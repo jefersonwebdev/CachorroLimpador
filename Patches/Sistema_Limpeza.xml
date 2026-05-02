@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Permite que o WorkGiver de limpeza aceite o seu cachorro como alvo válido -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/WorkGiverDef[defName="CleanFilth"]</xpath>
+    <value>
+      <requiredCapacities>
+        <li>Manipulation</li>
+      </requiredCapacities>
+    </value>
+  </Operation>
+
+</Patch>

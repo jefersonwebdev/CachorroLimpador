@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>LabradorLimpador</defName>
+    <label>labrador limpador</label>
+    <description>Uma variação especial do labrador que limpa sujeiras automaticamente.</description>
+
+    <statBases>
+      <MoveSpeed>4.5</MoveSpeed>
+      <MarketValue>300</MarketValue>
+      <FilthRate>0</FilthRate>
+      <Wildness>0</Wildness>
+    </statBases>
+
+    <race>
+      <body>QuadrupedAnimalWithPawsAndTail</body>
+      <baseBodySize>0.5</baseBodySize>
+      <baseHungerRate>0.3</baseHungerRate>
+      <baseHealthScale>0.7</baseHealthScale>
+      <foodType>OmnivoreAnimal</foodType>
+      <trainability>Advanced</trainability>
+      <petness>1</petness>
+      <hasGenders>true</hasGenders>
+      <lifeExpectancy>12</lifeExpectancy>
+
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.15</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.5</minAge>
+          <soundWounded>Pawn_Dog_Wounded</soundWounded>
+          <soundDeath>Pawn_Dog_Death</soundDeath>
+          <soundCall>Pawn_Dog_Call</soundCall>
+          <soundAngry>Pawn_Dog_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <soundEating>Animal_Eat</soundEating>
+    </race>
+
+    <comps>
+        <li Class="BioEngenharia.CompProperties_AutoCleaner">
+            <cleanRadius>3</cleanRadius>
+            <ticksBetweenScan>60</ticksBetweenScan>
+        </li>
+    </comps>
+
+  </ThingDef>
+
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>LabradorLimpador</defName>
+    <label>labrador limpador</label>
+    <race>LabradorLimpador</race>
+    <combatPower>50</combatPower>
+
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Labrador/Labrador</texPath>
+          <drawSize>0.7</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Labrador/Labrador</texPath>
+          <drawSize>0.9</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Labrador/Labrador</texPath>
+          <drawSize>1</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+    <JobDef>
+        <defName>AutoCleanFilthDog</defName>
+        <driverClass>BioEngenharia.JobDriver_AutoCleanFilthDog</driverClass>
+        <reportString>limpando sujeira.</reportString>
+    </JobDef>
+
+</Defs>
