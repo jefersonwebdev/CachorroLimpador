@@ -40,3 +40,4 @@ D:\SteamLibrary\steamapps\common\RimWorld\Mods\CachorroLimpador\Source\BioEngenh
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\CachorroLimpador\Source\BioEngenharia\obj\Debug\net472\BioEngen.56679F0E.Up2Date
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\CachorroLimpador\Source\BioEngenharia\obj\Debug\net472\BioEngenharia.dll
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\CachorroLimpador\Source\BioEngenharia\obj\Debug\net472\BioEngenharia.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\CachorroLimpador\Source\BioEngenharia\obj\Debug\net472\BioEngenharia.sourcelink.json

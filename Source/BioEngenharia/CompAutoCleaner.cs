@@ -5,7 +5,9 @@ using Verse.AI;
 
 namespace BioEngenharia
 {
-    // Configurações vindas do XML
+    // ==============================
+    // CONFIGURAÇÕES DO XML
+    // ==============================
     public class CompProperties_AutoCleaner : CompProperties
     {
         public float cleanRadius = 25f;
@@ -17,7 +19,9 @@ namespace BioEngenharia
         }
     }
 
-    // Componente colocado no cachorro
+    // ==============================
+    // COMPONENTE DO CACHORRO
+    // ==============================
     public class CompAutoCleaner : ThingComp
     {
         private CompProperties_AutoCleaner Props
@@ -43,7 +47,7 @@ namespace BioEngenharia
             if (!pawn.IsHashIntervalTick(Props.ticksBetweenScan))
                 return;
 
-            // Se já está ocupado, não interrompe
+            // Não interrompe se já estiver limpando
             if (pawn.CurJob != null && pawn.CurJob.def.defName == "AutoCleanFilthDog")
                 return;
 
@@ -61,8 +65,6 @@ namespace BioEngenharia
             }
 
             Job job = JobMaker.MakeJob(jobDef, sujeira);
-
-            // Manda o cachorro ir até aquela sujeira específica
             pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
         }
 
@@ -86,6 +88,10 @@ namespace BioEngenharia
                 if (!sujeira.Spawned)
                     continue;
 
+                // 🔒 RESPEITA ZONA PERMITIDA
+                if (!sujeira.Position.InAllowedArea(pawn))
+                    continue;
+
                 float distancia = sujeira.Position.DistanceTo(posicao);
 
                 if (distancia > Props.cleanRadius)
@@ -105,7 +111,9 @@ namespace BioEngenharia
         }
     }
 
-    // Job que faz o cachorro andar até a sujeira e limpar somente ela
+    // ==============================
+    // JOB DE LIMPEZA
+    // ==============================
     public class JobDriver_AutoCleanFilthDog : JobDriver
     {
         private const TargetIndex IndiceSujeira = TargetIndex.A;
@@ -119,37 +127,44 @@ namespace BioEngenharia
         {
             this.FailOnDestroyedOrNull(IndiceSujeira);
 
-            // Vai até a sujeira
+            // 🔒 NÃO SAIR DA ZONA
+            this.FailOn(() => !pawn.Position.InAllowedArea(pawn));
+
+            // Ir até a sujeira
             yield return Toils_Goto.GotoThing(IndiceSujeira, PathEndMode.OnCell);
 
-            // Espera um pouco em cima dela, simulando limpeza
+            // Tempo de limpeza
             Toil limpar = Toils_General.Wait(120);
             limpar.WithProgressBarToilDelay(IndiceSujeira);
 
+            // Efeito visual de limpeza igual ao dos colonos
+            EffecterDef efeitoLimpeza = DefDatabase<EffecterDef>.GetNamedSilentFail("Clean");
+
+            if (efeitoLimpeza != null)
+            {
+                limpar.WithEffect(efeitoLimpeza, IndiceSujeira);
+            }
+
             limpar.tickAction = delegate
             {
-                Pawn cachorro = pawn;
-
-                // Efeito visual simples enquanto limpa
-                if (cachorro.IsHashIntervalTick(30))
+                // Poeirinha extra leve, opcional
+                if (pawn.IsHashIntervalTick(30))
                 {
-                    FleckMaker.ThrowDustPuff(cachorro.Position.ToVector3Shifted(), cachorro.Map, 0.6f);
+                    FleckMaker.ThrowDustPuff(pawn.Position.ToVector3Shifted(), pawn.Map, 0.4f);
                 }
             };
 
             yield return limpar;
 
-            // Remove somente a sujeira alvo
+            // Remover a sujeira SOMENTE se estiver em cima
             Toil removerSujeira = new Toil();
             removerSujeira.initAction = delegate
             {
                 Thing coisa = job.GetTarget(IndiceSujeira).Thing;
-
                 Filth sujeira = coisa as Filth;
 
                 if (sujeira != null && sujeira.Spawned)
                 {
-                    // Só limpa se o cachorro estiver na mesma célula da sujeira
                     if (pawn.Position == sujeira.Position)
                     {
                         sujeira.Destroy();
