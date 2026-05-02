@@ -15,7 +15,7 @@
 
     <race>
       <body>QuadrupedAnimalWithPawsAndTail</body>
-      <baseBodySize>0.5</baseBodySize>
+      <baseBodySize>2.0</baseBodySize>
       <baseHungerRate>0.3</baseHungerRate>
       <baseHealthScale>0.7</baseHealthScale>
       <foodType>OmnivoreAnimal</foodType>
@@ -36,7 +36,7 @@
         <li>
           <def>AnimalAdult</def>
           <minAge>0.5</minAge>
-          <soundWounded>Pawn_Dog_Wounded</soundWounded>
+          
           <soundDeath>Pawn_Dog_Death</soundDeath>
           <soundCall>Pawn_Dog_Call</soundCall>
           <soundAngry>Pawn_Dog_Angry</soundAngry>
@@ -46,7 +46,7 @@
       <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
       <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
       <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
-      <soundEating>Animal_Eat</soundEating>
+      
     </race>
 
     <comps>
@@ -81,7 +81,7 @@
       <li>
         <bodyGraphicData>
           <texPath>Things/Pawn/Animal/Labrador/Labrador</texPath>
-          <drawSize>1</drawSize>
+          <drawSize>2</drawSize>
         </bodyGraphicData>
       </li>
     </lifeStages>
