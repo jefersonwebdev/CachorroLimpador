@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ========================= -->
+  <!-- MACACO AGRICULTOR -->
+  <!-- ========================= -->
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>MacacoAgricultor</defName>
+    <label>macaco agricultor</label>
+    <description>Um macaco geneticamente modificado para auxiliar em tarefas agrícolas, semeando, colhendo e podando plantas maduras dentro da área permitida.</description>
+
+    <statBases>
+      <MoveSpeed>4.8</MoveSpeed>
+      <MarketValue>700</MarketValue>
+      <Wildness>0</Wildness>
+      <FilthRate>2</FilthRate>
+    </statBases>
+
+    <race>
+      <body>QuadrupedAnimalWithPawsAndTail</body>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHungerRate>0.25</baseHungerRate>
+      <baseHealthScale>0.7</baseHealthScale>
+
+      <foodType>OmnivoreAnimal</foodType>
+
+      <trainability>Advanced</trainability>
+      <petness>1</petness>
+      <hasGenders>true</hasGenders>
+      <lifeExpectancy>20</lifeExpectancy>
+
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.25</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.75</minAge>
+        </li>
+      </lifeStageAges>
+
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+
+    <tools>
+      <li>
+        <label>mão esquerda</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.8</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      </li>
+
+      <li>
+        <label>mão direita</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.8</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      </li>
+
+      <li>
+        <label>mordida</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>2.2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      </li>
+    </tools>
+
+    <comps>
+        <li Class="BioEngenharia.CompProperties_AutoFarmer">
+            <workRadius>50</workRadius>
+            <ticksBetweenScan>60</ticksBetweenScan>
+            <workDuration>180</workDuration>
+        </li>
+    </comps>
+
+  </ThingDef>
+
+
+  <!-- ========================= -->
+  <!-- SPAWN PAWN -->
+  <!-- ========================= -->
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>MacacoAgricultor</defName>
+    <label>macaco agricultor</label>
+    <race>MacacoAgricultor</race>
+    <combatPower>35</combatPower>
+
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Monkey/Monkey</texPath>
+          <drawSize>0.6</drawSize>
+        </bodyGraphicData>
+      </li>
+
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Monkey/Monkey</texPath>
+          <drawSize>0.8</drawSize>
+        </bodyGraphicData>
+      </li>
+
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Monkey/Monkey</texPath>
+          <drawSize>2.0</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+
+  <!-- ========================= -->
+  <!-- JOB DE COLHEITA -->
+  <!-- ========================= -->
+
+    <JobDef>
+        <defName>AutoHarvestPlantMonkey</defName>
+        <driverClass>BioEngenharia.JobDriver_AutoHarvestPlantMonkey</driverClass>
+        <reportString>colhendo planta.</reportString>
+    </JobDef>
+
+    <JobDef>
+        <defName>AutoSowPlantMonkey</defName>
+        <driverClass>BioEngenharia.JobDriver_AutoSowPlantMonkey</driverClass>
+        <reportString>semeando planta.</reportString>
+    </JobDef>
+
+    <JobDef>
+        <defName>AutoCutPlantMonkey</defName>
+        <driverClass>BioEngenharia.JobDriver_AutoCutPlantMonkey</driverClass>
+        <reportString>podando planta.</reportString>
+    </JobDef>
+
+</Defs>
