@@ -20,12 +20,22 @@
   <!-- Descrição detalhada que aparece no menu do jogo -->
   <description>
 Este mod introduz uma série de animais modificados geneticamente para auxiliar na colônia:
-    
+
 - Labrador Faxineiro: Não gera sujeira e limpa o ambiente.
 - (Próximos animais aqui...)
-    
+
 Focado em utilidade e automação orgânica.
-  </description>
+
+
+English:
+
+This mod introduces a series of genetically modified animals designed to assist the colony:
+
+- Cleaner Labrador: Does not generate filth and cleans the environment.
+- (Upcoming animals here...)
+
+Focused on utility and organic automation.
+</description>
 
   <!-- Links úteis (Opcional, mas profissional) -->
   <url>https://github.com/jefersonwebdev/CachorroLimpador</url>
