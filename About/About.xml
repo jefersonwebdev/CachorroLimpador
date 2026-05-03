@@ -21,20 +21,20 @@
   <description>
 Este mod introduz uma série de animais modificados geneticamente para auxiliar na colônia:
 
-- Labrador Faxineiro: Não gera sujeira e limpa o ambiente.
-- (Próximos animais aqui...)
+- Labrador Faxineiro: Não gera sujeira e limpa automaticamente o ambiente dentro da área permitida.
+- Puma Caçador: Caça pequenos animais selvagens próximos, respeitando a área permitida.
 
-Focado em utilidade e automação orgânica.
+Focado em utilidade, automação orgânica e apoio às tarefas da colônia.
 
 
 English:
 
 This mod introduces a series of genetically modified animals designed to assist the colony:
 
-- Cleaner Labrador: Does not generate filth and cleans the environment.
-- (Upcoming animals here...)
+- Cleaner Labrador: Does not generate filth and automatically cleans the environment within its allowed area.
+- Hunter Cougar: Hunts nearby small wild animals while respecting its allowed area.
 
-Focused on utility and organic automation.
+Focused on utility, organic automation, and colony task support.
 </description>
 
   <!-- Links úteis (Opcional, mas profissional) -->

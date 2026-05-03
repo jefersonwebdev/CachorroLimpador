@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BioEngenharia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e194693c23613f70cce77add822693967807bebe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+351660951666829fdd307b5b2e48c67be8b04e95")]
 [assembly: System.Reflection.AssemblyProductAttribute("BioEngenharia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BioEngenharia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
