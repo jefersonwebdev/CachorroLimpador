@@ -68,20 +68,20 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Labrador/Labrador</texPath>
+          <texPath>Things/Pawn/Animal/LabradorLimpador/LabradorLimpador</texPath>
           <drawSize>0.7</drawSize>
         </bodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Labrador/Labrador</texPath>
+          <texPath>Things/Pawn/Animal/LabradorLimpador/LabradorLimpador</texPath>
           <drawSize>0.9</drawSize>
         </bodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Animal/Labrador/Labrador</texPath>
-          <drawSize>2</drawSize>
+          <texPath>Things/Pawn/Animal/LabradorLimpador/LabradorLimpador</texPath>
+          <drawSize>2.2</drawSize>
         </bodyGraphicData>
       </li>
     </lifeStages>
